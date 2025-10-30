@@ -6,8 +6,8 @@ using System;
 
 namespace fashion_campus {
     internal class MainClass {
-        public static readonly string con_string = "Data Source=PC100,1434; Initial Catalog=Fashion_Campus; " +
-            "Persist Security Info=True; User ID=sa; Password=std001;";
+        public static readonly string con_string = "Data Source=SERVER_NAME,PORT; Initial Catalog=Fashion_Campus; " +
+            "Persist Security Info=True; User ID=USERNAME; Password=PASSWORD;";
 
         public static SqlConnection con = new SqlConnection(con_string);
 
