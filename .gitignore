@@ -1,0 +1,16 @@
+# C# (Visual Studio)
+.vs/        
+bin/        
+obj/        
+*.htm       
+
+# Python (PyCharm)
+__pycache__/     
+*.pyc            
+venv/            
+.env             
+python/data/     
+
+# 공통
+*.log            
+*.db             
