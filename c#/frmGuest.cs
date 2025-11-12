@@ -41,12 +41,13 @@ namespace fashion_campus {
 
                 string submaster = @"select distinct subCategory from products where masterCategory = @master";
 
-                SqlCommand cmd = new SqlCommand(submaster, MainClass.con);
-                cmd.Parameters.AddWithValue("@master", cbMaster.SelectedValue.ToString());
-
-                MainClass.CBFill(cmd, cbSub, "subCategory", "subCategory");
+                using (SqlConnection con = new SqlConnection(MainClass.con_string)) {
+                    using (SqlCommand cmd = new SqlCommand(submaster, con)) {
+                        cmd.Parameters.AddWithValue("@master", cbMaster.SelectedValue.ToString());
+                        MainClass.CBFill(cmd, cbSub, "subCategory", "subCategory");
+                    }
+                }
             }
-            
         }
 
         public void GetData() {

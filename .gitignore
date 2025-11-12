@@ -3,6 +3,7 @@
 bin/        
 obj/        
 *.htm       
+app.config
 
 # Python (PyCharm)
 __pycache__/     
@@ -10,6 +11,7 @@ __pycache__/
 venv/            
 .env             
 python/data/     
+.idea/
 
 # 공통
 *.log            

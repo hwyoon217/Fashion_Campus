@@ -26,7 +26,6 @@ class RecommendResultDto(BaseModel):
     Score: float
 
 
-
 # 전역 변수 딕셔너리: 모든 로드된 모델과 데이터를 저장
 LOADED_ASSETS = {}
 
@@ -37,6 +36,8 @@ def load_pickle(path):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    #서버 시작 시 모델과 데이터를 한 번만 로드
+
     logging.info("--- Starting Model and Data Loading ---")
 
     global LOADED_ASSETS
@@ -56,15 +57,12 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# C#의 RecommendRequestAsync 함수가 POST 요청을 보내므로, POST를 사용
 @app.post("/recommend", response_model=List[RecommendResultDto])
 def recommend_endpoint(request_dto: RecommendRequestDto):
-    # 요청 데이터 추출
     user_id = request_dto.CustomerId
     grade = request_dto.Grade
     query = request_dto.Query
 
-    # 추천 로직 실행 (recommend_core.py)
     recommendation_results_df = get_final_recommendation(
         user_id=user_id,
         user_grade=grade,

@@ -21,8 +21,7 @@ namespace fashion_campus {
         public string Grade { get; set; }
         // Query => 검색어
         public string Query { get; set; }
-        // ArticleType => 필터링용 (오타나, 유사한products - articleType 값 입력시에도 적용되게끔
-        // public string ArticleType { get; set; }    
+   
         public List<ProductsDto> ProductList { get; set; }
     }
 
