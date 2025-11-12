@@ -12,7 +12,26 @@ using System.Windows.Forms;
 
 namespace fashion_campus {
     // 파이썬으로부터 받을 결과값 저장하고 정렬에 사용할 dto
-    
+    public class DisplayDto {
+        public int Id { get; set; }
+        public string ProductDisplayName { get; set; }
+        public string MasterCategory { get; set; }
+        public string SubCategory { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public int Year { get; set; }
+        public double Score { get; set; } // 추천점수
+    }
+
+    // 정렬 기준 정의
+    public enum SortCriteria {
+        RecommendScore,
+        LatestYear,
+        MostSold,
+        HighestPrice,
+        LowestPrice
+    }
+
     public partial class frmMember : Sample {
         private int _customerid;
         private string _username;
@@ -198,25 +217,7 @@ namespace fashion_campus {
             }
         }
 
-        public class DisplayDto {
-            public int Id { get; set; }
-            public string ProductDisplayName { get; set; }
-            public string MasterCategory { get; set; }
-            public string SubCategory { get; set; }
-            public decimal Price { get; set; }
-            public int Quantity { get; set; }
-            public int Year { get; set; }
-            public double Score { get; set; } // 추천점수
-        }
-
-        // 정렬 기준 정의
-        public enum SortCriteria {
-            RecommendScore,
-            LatestYear,
-            MostSold,
-            HighestPrice,
-            LowestPrice
-        }
+        
 
 
     }
