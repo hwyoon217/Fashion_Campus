@@ -3,7 +3,7 @@
 bin/        
 obj/        
 *.htm       
-app.config
+c#/app.config
 
 # Python (PyCharm)
 __pycache__/     
@@ -11,8 +11,12 @@ __pycache__/
 venv/            
 .env             
 python/data/     
-.idea/
+python/.idea/
+python/.ipynb_checkpoints/
 
 # 공통
 *.log            
-*.db             
+*.db  
+
+# 루트
+.idea/        
