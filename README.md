@@ -31,9 +31,11 @@ C#과 Python을 병행하여 개발한 검색 기반 개인화 상품 추천 시
 <br>
 
 ## 폴더 구조
-- c#          # C# 프로젝트 코드
-- python      # Python 추천 모델 코드
-- README.md   # 설명 파일
+```
+- c#          : C# 프로젝트 코드
+- python      : Python 추천 모델 코드
+- README.md   : 설명 파일
+```
 
 <br>
 
